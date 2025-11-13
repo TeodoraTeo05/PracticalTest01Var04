@@ -15,6 +15,7 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
     private CheckBox studentButton, groupButton;
     private Button displayInformation;
     private ButtonClickListener buttonClickListener = new ButtonClickListener();
+    private static final String STUDENT_INFO = "student_info";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,18 +25,27 @@ public class PracticalTest01Var04MainActivity extends AppCompatActivity {
         studentNameEditText = findViewById(R.id.number1_edit_text);
         studentGroupEditText = findViewById(R.id.number2_edit_text);
         studentInfo = findViewById(R.id.student_text);
-
         studentButton = findViewById(R.id.number1_checkbox);
         groupButton = findViewById(R.id.number2_checkbox);
-
         displayInformation = findViewById(R.id.display_button);
         displayInformation.setOnClickListener(buttonClickListener);
+
+        if (savedInstanceState != null) {
+            if (savedInstanceState.containsKey(STUDENT_INFO)) {
+                studentInfo.setText(savedInstanceState.getString(STUDENT_INFO));
+            }
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString(STUDENT_INFO, studentInfo.getText().toString());
+        super.onSaveInstanceState(outState);
     }
 
     private class ButtonClickListener implements View.OnClickListener {
         @Override
         public void onClick(View view) {
-
             String numeStudent = studentNameEditText.getText().toString().trim();
             String groupStudent = studentGroupEditText.getText().toString().trim();
             boolean currentCheck1 = studentButton.isChecked();

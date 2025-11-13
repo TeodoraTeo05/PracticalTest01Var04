@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
+        android:saveEnabled="false"
         android:text="navigate_to_secondary_activity" />
 
     <LinearLayout
@@ -24,12 +25,14 @@
             android:id="@+id/number1_checkbox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:saveEnabled="false"
             android:layout_alignParentLeft="true"
             android:layout_weight="0.1" />
 
         <EditText
             android:id="@+id/number1_edit_text"
             android:layout_width="0dp"
+            android:saveEnabled="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center" />
@@ -46,6 +49,7 @@
             android:id="@+id/number2_checkbox"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:saveEnabled="false"
             android:layout_alignParentLeft="true"
             android:layout_weight="0.1" />
 
@@ -54,6 +58,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:saveEnabled="false"
             android:gravity="center" />
 
     </LinearLayout>
@@ -64,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="16dp"
+        android:saveEnabled="false"
         android:text="DISPLAY INFORMATION" />
 
     <LinearLayout
